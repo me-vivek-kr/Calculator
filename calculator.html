@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 280px;
+            height: 270px;
+            background-color: black;
+            }
+        input{
+            width: 20%;
+            height: 40px;
+            font-size: 20px;
+            margin:5px;
+        }
+        #dis{
+            width: 94%;
+            height: 45px;
+            background-color: rgb(218, 218, 218);
+        }
+        .button1 {
+            background-color: #ffffff;
+            box-shadow: 0 12px 16px 0 rgba(122, 122, 122, 0.175), 0 17px 50px 0 rgba(255, 255, 255, 0.19);
+        }
+        .button2 {
+            background-color: rgba(228, 171, 66, 0.678);
+        }
+        .button3 {
+            background-color: rgba(94, 193, 191, 0.885);
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div id="main">
+        <form name="f">
+            <input type="text" name="ddd" placeholder="0" id="dis">
+            <br>
+            <input class="button1" type="button" value="1" onclick="f.ddd.value+=1">
+            <input class="button1" type="button" value="2" onclick="f.ddd.value+=2">
+            <input class="button1" type="button" value="3" onclick="f.ddd.value+=3">
+            <input class="button3" type="button" value="+" onclick="add()">
+            <br>
+            <input class="button1" type="button" value="4" onclick="f.ddd.value+=4">
+            <input class="button1" type="button" value="5" onclick="f.ddd.value+=5">
+            <input class="button1" type="button" value="6" onclick="f.ddd.value+=6">
+            <input class="button3" type="button" value="-" onclick="sub()">
+            <br>
+            <input class="button1" type="button" value="7" onclick="f.ddd.value+=7">
+            <input class="button1" type="button" value="8" onclick="f.ddd.value+=8">
+            <input class="button1" type="button" value="9" onclick="f.ddd.value+=9">
+            <input class="button3" type="button" value="/" onclick="divd()">
+            <br>
+            <input class="button2" type="button" value="C" onclick="f.ddd.value=''">
+            <input class="button1" type="button" value="0" onclick="f.ddd.value+=0">
+            <input class="button1" type="button" value="=" onclick="f.ddd.value=eval(f.ddd.value)">
+            <input class="button3" type="button" value="x" onclick="mul()">            
+            <br>         
+        </form>
+    </div>
+
+    <script>
+        function add(){
+            var act=0,b=0;
+        act= f.ddd.value;
+        b=act.charAt(act.length-1);
+        if(b=='+'|| b=='-' || b=='*' || b=='/'){
+            f.ddd.value=act.substring(0,act.length-1);
+            f.ddd.value+='+';
+        }
+        else{
+            f.ddd.value+='+';
+        }
+        }
+
+        function sub(){
+            var act=0,b=0;
+        act= f.ddd.value;
+        b=act.charAt(act.length-1);
+        if(b=='+'|| b=='-' || b=='*' || b=='/'){
+            f.ddd.value=act.substring(0,act.length-1);
+            f.ddd.value+='-';
+        }
+        else{
+            f.ddd.value+='-';
+        }
+        }
+
+        function mul(){
+            var act=0,b=0;
+        act= f.ddd.value;
+        b=act.charAt(act.length-1);
+        if(b=='+'|| b=='-' || b=='*' || b=='/'){
+            f.ddd.value=act.substring(0,act.length-1);
+            f.ddd.value+='*';
+        }
+        else{
+            f.ddd.value+='*';
+        }
+        }
+
+        function divd(){
+            var act=0,b=0;
+        act= f.ddd.value;
+        b=act.charAt(act.length-1);
+        if(b=='+'|| b=='-' || b=='*' || b=='/'){
+            f.ddd.value=act.substring(0,act.length-1);
+            f.ddd.value+='/';
+        }
+        else{
+            f.ddd.value+='/';
+        }
+        }
+    </script>
+</body>
+</html>
